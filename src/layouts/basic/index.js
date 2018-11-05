@@ -45,6 +45,7 @@ class Basic extends React.Component {
     }
 
     render() {
+        const ExceptionComponent = routerData['/exception/404'].component
         return (
             <DocumentTitle title={this.getPageTitle()}>
                 <section className={style.layout}>
@@ -69,14 +70,15 @@ class Basic extends React.Component {
                                             )
                                         }
                                         if (routerData[path].component) {
+                                            const Component =
+                                                routerData[path].component
                                             return (
                                                 <AuthorizedRoute
                                                     key={path}
                                                     path={path}
-                                                    component={
-                                                        routerData[path]
-                                                            .component
-                                                    }
+                                                    component={props => (
+                                                        <Component {...props} />
+                                                    )}
                                                     exect={true}
                                                 />
                                             )
@@ -84,10 +86,9 @@ class Basic extends React.Component {
                                         return null
                                     })}
                                     <AuthorizedRoute
-                                        component={
-                                            routerData['/exception/404']
-                                                .component
-                                        }
+                                        component={props => (
+                                            <ExceptionComponent {...props} />
+                                        )}
                                     />
                                     );
                                 </Switch>

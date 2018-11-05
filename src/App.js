@@ -9,7 +9,10 @@ class App extends React.Component {
             <BrowserRouter>
                 <Suspense fallback={<RouteLoading />}>
                     <Switch>
-                        <Route path="/auth" component={Auth} />
+                        <Route
+                            path="/auth"
+                            component={props => <Auth {...props} />}
+                        />
                         <Route path="/" component={Layout} />
                     </Switch>
                 </Suspense>
