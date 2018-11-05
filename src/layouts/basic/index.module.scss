@@ -1,0 +1,19 @@
+.layout {
+    display: flex;
+    flex-direction: row;
+    min-height: 100%;
+    height: 100%;
+}
+
+.container {
+    display: inline-flex;
+    height: 100%;
+    flex-direction: column;
+    flex: 1;
+    overflow-x: hidden;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}

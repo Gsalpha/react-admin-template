@@ -1,0 +1,24 @@
+.header {
+    display: inline-flex;
+    height: 64px;
+    align-items: center;
+    background-color: #fff;
+    padding: 0 54px 0 24px;
+    box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+    flex: 0 0 auto;
+}
+
+.auth {
+    display: inline-flex;
+    margin-left: auto;
+    align-items: center;
+    cursor: pointer;
+    height: 100%;
+    padding: 0 30px;
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.025);
+    }
+    .name {
+        margin-left: 10px;
+    }
+}

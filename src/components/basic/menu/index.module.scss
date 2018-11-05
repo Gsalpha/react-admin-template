@@ -1,0 +1,11 @@
+.menu {
+    position: relative;
+    flex: 0 0 256px;
+    width: 256px;
+    min-height: 100vh;
+    background-color: #fff;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.35);
+}
+:global(.ant-menu-inline) {
+    border-right: none;
+}
