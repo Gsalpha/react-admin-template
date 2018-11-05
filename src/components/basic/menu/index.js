@@ -57,12 +57,12 @@ class BaseMenu extends React.Component {
         }
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        return (
-            nextProps.location.pathname !== this.props.location.pathname ||
-            nextState.openKeys !== this.state.openKeys
-        )
-    }
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     return (
+    //         nextProps.location.pathname !== this.props.location.pathname ||
+    //         nextState.openKeys !== this.state.openKeys
+    //     )
+    // }
     render() {
         const { openKeys, selectedKeys } = this.state
         const data = this.props._user_.user
