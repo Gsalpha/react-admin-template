@@ -13,7 +13,13 @@ const dropDownContent = handleLogout => (
             <Link to="/admin/setting">系统设置</Link>
         </Item>
         <Item>
-            <a href="javascript:;" onClick={handleLogout}>
+            <a
+                href="/"
+                onClick={e => {
+                    e.preventDefault()
+                    handleLogout()
+                }}
+            >
                 注销
             </a>
         </Item>
