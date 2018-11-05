@@ -2,7 +2,7 @@ import { observable, action } from 'mobx'
 import { notification } from 'antd'
 import { fetchLogin, fetchAuth } from 'api/user'
 
-class AuthStore {
+class UserStore {
     @observable
     loginLoading = false
     @observable
@@ -51,4 +51,4 @@ class AuthStore {
     }
 }
 
-export default new AuthStore()
+export default new UserStore()
