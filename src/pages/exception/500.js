@@ -1,6 +1,6 @@
 import React from 'react'
-import Expection from 'components/basic/exception'
+import Exception from 'components/basic/exception'
 
-const Expection500 = () => <Expection type="500" />
+const Exception500 = () => <Exception type="500" />
 
-export default Expection500
+export default Exception500

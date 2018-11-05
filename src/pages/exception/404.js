@@ -1,6 +1,6 @@
 import React from 'react'
-import Expection from 'components/basic/exception'
+import Exception from 'components/basic/exception'
 
-const Expection404 = () => <Expection type="404" />
+const Exception404 = () => <Exception type="404" />
 
-export default Expection404
+export default Exception404
