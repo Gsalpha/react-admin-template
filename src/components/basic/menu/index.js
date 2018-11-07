@@ -1,7 +1,6 @@
 import { Menu } from 'antd'
 import React from 'react'
 import { withRouter, Link } from 'react-router-dom'
-import { getFilteredMenuData } from 'config/menu'
 import style from './index.module.scss'
 import { inject, observer } from 'mobx-react'
 
@@ -57,17 +56,9 @@ class BaseMenu extends React.Component {
         }
     }
 
-    // shouldComponentUpdate(nextProps, nextState) {
-    //     return (
-    //         nextProps.location.pathname !== this.props.location.pathname ||
-    //         nextState.openKeys !== this.state.openKeys
-    //     )
-    // }
     render() {
         const { openKeys, selectedKeys } = this.state
-        const data = this.props._user_.user
-            ? getFilteredMenuData(this.props._user_.user.permissionRoute)
-            : null
+        const data = this.props._user_.flatPermissionRoutes
         if (!this.props._user_.getCurUserLoading) {
             return (
                 <section className={style.menu}>

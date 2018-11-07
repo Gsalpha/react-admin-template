@@ -35,7 +35,11 @@ class AuthorizedRoute extends React.Component {
                     if (curPath.indexOf('exception') > -1) {
                         return <Component {...props} />
                     }
-                    if (!user.permissionRoute.find(item => item === curPath)) {
+                    if (
+                        !user.permissionRoute.find(
+                            item => item.path === curPath
+                        )
+                    ) {
                         return <Exception type="403" />
                     }
                     return <Component {...props} />

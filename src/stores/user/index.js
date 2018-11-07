@@ -1,6 +1,7 @@
-import { observable, action } from 'mobx'
+import { observable, action, computed } from 'mobx'
 import { notification } from 'antd'
 import { fetchLogin, fetchAuth } from 'api/user'
+import { getFilteredMenuData } from 'config/menu'
 
 class UserStore {
     @observable
@@ -8,8 +9,16 @@ class UserStore {
     @observable
     getCurUserLoading = true
     @observable
-    user = {}
-
+    user = {
+        username: null,
+        permissionRoute: []
+    }
+    @computed
+    get flatPermissionRoutes() {
+        return getFilteredMenuData(
+            this.user.permissionRoute.map(item => item.path)
+        )
+    }
     @action
     async login(payload) {
         this.loginLoading = true
@@ -46,7 +55,10 @@ class UserStore {
 
     @action
     async logout() {
-        this.user = null
+        this.user = {
+            username: null,
+            permissionRoute: []
+        }
         await window.localStorage.setItem('authority', '')
     }
 }

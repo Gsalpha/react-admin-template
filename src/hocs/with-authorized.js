@@ -1,0 +1,1 @@
+const withAuthorized = WrappedComponent => {}
