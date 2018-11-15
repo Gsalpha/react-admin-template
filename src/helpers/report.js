@@ -6,7 +6,7 @@ export const initSentry = () => {
         environment: isDev ? 'development' : 'production',
         dsn: process.env.REACT_APP_SENTRY_DSN
     }
-    if (isDev) {
+    if (!isDev) {
         initConfig.release = process.env.REACT_APP_SENTRY_RELEASE_VERSION
     }
     Sentry.init(initConfig)

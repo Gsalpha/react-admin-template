@@ -16,12 +16,14 @@ AXIOS.interceptors.response.use(
     error => {
         const response = error.response
         if (!response || !response.data || !response.data.message) {
-            return Promise.reject({ ...error, message: '未知错误' })
+            return Promise.reject(new Error({ ...error, message: '未知错误' }))
         }
-        return Promise.reject({
-            ...error,
-            message: response.data.message
-        })
+        return Promise.reject(
+            new Error({
+                ...error,
+                message: response.data.message
+            })
+        )
     }
 )
 
