@@ -2,7 +2,6 @@ import { observable, action, computed } from 'mobx'
 import { notification } from 'antd'
 import { fetchLogin, fetchAuth } from 'api/user'
 import { getFilteredMenuData } from 'config/menu'
-import { report } from 'helpers/report'
 class UserStore {
     @observable
     loginLoading = false
@@ -30,7 +29,6 @@ class UserStore {
             return true
         } catch (e) {
             this.loginLoading = false
-            report(e)
             notification.error({
                 message: '登录失败',
                 description: e.message
