@@ -42,7 +42,7 @@ class Basic extends React.Component {
             }
         }
         if (currRouterData && currRouterData.name) {
-            title = `${currRouterData.name} - React App`
+            title = `${currRouterData.name} --`
         }
         return title
     }

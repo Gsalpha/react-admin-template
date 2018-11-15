@@ -8,7 +8,6 @@ export const initSentry = () =>
                 : 'production',
         dsn: process.env.REACT_APP_SENTRY_DSN
     })
-
 export const report = error => {
     Sentry.captureException(error)
 }

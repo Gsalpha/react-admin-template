@@ -8,6 +8,6 @@ echo $VERSION
 echo '------------'
 echo 'start building'
 sentry-cli releases new -p refrain $VERSION
-#REACT_APP_SENTRY_RELEASE_VERSION=$VERSION node scripts/build.js
+REACT_APP_SENTRY_RELEASE_VERSION=$VERSION node scripts/build.js
 sentry-cli releases set-commits --auto $VERSION
-sentry-cli releases files $VERSION upload-sourcemaps --rewrite ./build/static/js/
+sentry-cli releases files $VERSION upload-sourcemaps ./build/static/js/
