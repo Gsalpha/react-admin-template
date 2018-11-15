@@ -18,9 +18,7 @@ AXIOS.interceptors.response.use(
         if (!response || !response.data || !response.data.message) {
             return Promise.reject({ message: '未知错误' })
         }
-        return Promise.reject({
-            message: response.data.message
-        })
+        return Promise.reject({ message: response.data.message })
     }
 )
 
