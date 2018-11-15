@@ -1,5 +1,5 @@
 import { observable, action, computed } from 'mobx'
-import { notification, Collapse } from 'antd'
+import { notification } from 'antd'
 import { fetchLogin, fetchAuth } from 'api/user'
 import { getFilteredMenuData } from 'config/menu'
 import { report } from 'helpers/report'
