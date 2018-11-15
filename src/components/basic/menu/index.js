@@ -56,6 +56,12 @@ class BaseMenu extends React.Component {
         }
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+        return (
+            nextProps.location.pathname !== this.props.location.pathname ||
+            nextState.openKeys !== this.state.openKeys
+        )
+    }
     render() {
         const { openKeys, selectedKeys } = this.state
         const data = this.props._user_.flatPermissionRoutes
@@ -63,6 +69,7 @@ class BaseMenu extends React.Component {
             return (
                 <section className={style.menu}>
                     <Menu
+                        inlineCollapsed={this.props._user_.collapsed}
                         mode="inline"
                         theme="light"
                         selectedKeys={selectedKeys}

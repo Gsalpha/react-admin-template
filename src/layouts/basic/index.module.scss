@@ -6,9 +6,8 @@
 }
 
 .container {
+    padding-top: 64px;
     display: inline-flex;
-    height: 100%;
-    flex-direction: column;
     flex: 1;
     overflow-x: hidden;
 }
@@ -16,4 +15,5 @@
 .content {
     flex: 1;
     padding: 20px;
+    margin-left: 256px;
 }

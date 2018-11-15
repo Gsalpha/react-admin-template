@@ -1,5 +1,5 @@
 import { observable, action, computed } from 'mobx'
-import { notification } from 'antd'
+import { notification, Collapse } from 'antd'
 import { fetchLogin, fetchAuth } from 'api/user'
 import { getFilteredMenuData } from 'config/menu'
 
@@ -13,6 +13,7 @@ class UserStore {
         username: null,
         permissionRoute: []
     }
+
     @computed
     get flatPermissionRoutes() {
         return getFilteredMenuData(

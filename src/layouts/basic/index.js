@@ -27,6 +27,9 @@ class Basic extends React.Component {
             this.props.history.replace(process.env.REACT_APP_AUTH_ROUTE)
         }
     }
+    componentDidCatch() {
+        console.log(1)
+    }
     getPageTitle = () => {
         const { location } = this.props
         const { pathname } = location
@@ -43,15 +46,14 @@ class Basic extends React.Component {
         }
         return title
     }
-
     render() {
         const ExceptionComponent = routerData['/exception/404'].component
         return (
             <DocumentTitle title={this.getPageTitle()}>
                 <section className={style.layout}>
-                    <Menu />
+                    <Header />
                     <section className={style.container}>
-                        <Header />
+                        <Menu />
                         <section className={style.content}>
                             <Suspense fallback={<RouteLoading />}>
                                 <Switch>

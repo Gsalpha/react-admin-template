@@ -40,7 +40,7 @@ class Auth extends React.Component {
             <DocumentTitle title="登录 - React App">
                 <section className={style.auth}>
                     <header className={style.header}>
-                        <h1>Auth</h1>
+                        <h1>{process.env.REACT_APP_TITLE}</h1>
                     </header>
                     <section className={style.form}>
                         <Form onSubmit={this.handleLogin}>

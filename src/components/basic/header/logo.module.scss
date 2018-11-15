@@ -1,0 +1,19 @@
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.logo {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    img {
+        animation: rotate 4s linear infinite reverse;
+    }
+    h1 {
+        font-weight: bold;
+    }
+}
