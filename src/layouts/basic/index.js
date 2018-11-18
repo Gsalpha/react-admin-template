@@ -27,8 +27,8 @@ class Basic extends React.Component {
             this.props.history.replace(process.env.REACT_APP_AUTH_ROUTE)
         }
     }
-    componentDidCatch() {
-        console.log(1)
+    componentDidCatch(error, errorInfo) {
+        console.log(error, errorInfo)
     }
     getPageTitle = () => {
         const { location } = this.props

@@ -16,11 +16,11 @@ AXIOS.interceptors.response.use(
     response => response.data,
     error => {
         const response = error.response
-        Sentry.withScope(scope => {
-            scope.setTag('fetch', error.message)
-            scope.setLevel('warning')
-            Sentry.captureException(error)
-        })
+        // Sentry.withScope(scope => {
+        //     scope.setTag('fetch', error.message)
+        //     scope.setLevel('warning')
+        //     Sentry.captureException(error)
+        // })
         if (!response || !response.data || !response.data.message) {
             return Promise.reject({ message: '未知错误' })
         }
