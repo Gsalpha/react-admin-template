@@ -47,7 +47,6 @@ class Basic extends React.Component {
         return title
     }
     render() {
-        const ExceptionComponent = routerData['/exception/404'].component
         return (
             <DocumentTitle title={this.getPageTitle()}>
                 <section className={style.layout}>
@@ -87,11 +86,7 @@ class Basic extends React.Component {
                                         }
                                         return null
                                     })}
-                                    <AuthorizedRoute
-                                        component={props => (
-                                            <ExceptionComponent {...props} />
-                                        )}
-                                    />
+                                    <Redirect to="/exception/404" />
                                     );
                                 </Switch>
                             </Suspense>

@@ -6,7 +6,6 @@ import { withRouter, Route, Redirect } from 'react-router-dom'
 import Exception from 'components/basic/exception'
 import { observer, inject } from 'mobx-react'
 import { isLogined } from 'helpers'
-import routerData from 'config/router'
 
 @inject('_user_')
 @observer
@@ -26,11 +25,6 @@ class AuthorizedRoute extends React.Component {
                         return (
                             <Redirect to={process.env.REACT_APP_AUTH_ROUTE} />
                         )
-                    }
-                    if (
-                        !Object.keys(routerData).find(item => item === curPath)
-                    ) {
-                        return <Redirect to="/exception/404" />
                     }
                     if (curPath.indexOf('exception') > -1) {
                         return <Component {...props} />
